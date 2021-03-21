@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DotGothic16&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style-cadastro.css">
+    <title>Folha de cadastro</title>
+</head>
+<body>
+
+    <div>
+        <h1 id="title">Seja bem-vindo, Dev!</h1>
+        <p id="subtitle">Complete suas informações</p>
+        <br>
+    </div>
+
+    <form action="cadastro" class="header">
+            <fieldset class="information">
+                <div class="field">
+                    <label for="name">
+                        <span><strong>Name:</strong></span>
+                        <input type="text" id="name" name="name" placeholder="Trancreva seu nome completo" required>
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label for="email">
+                    <span><strong>E-mail:</strong></span>
+                    <input type="email" id="email" name="email" placeholder="Insira seu e-mail" required>
+                </label>
+            </div>
+
+            <div>
+
+                <label for="contato">
+                    <span><strong>Telefone:</strong></span>
+                    <input type="number" id="telefone" name="telefone" placeholder="( ) *****-****">
+                </label>
+            </div>
+
+            <div class="field">
+                <label><strong>Qual sua aréa de atuação?</strong></label>
+            <label for="devweb">
+                <input type="radio" name="devweb" value="frontend">Front-end
+            </label>
+            <label for="devweb"> 
+                <input type="radio" name="devwed" value="backend">Back-end
+            </label>
+            <label for="devweb">
+                <input type="radio" name="devweb" value="fullstack">FullStack
+            </label>
+            </div>
+
+            <div class="field">
+                <label for="Senioridade"><strong>Senioridade</strong></label>
+                <select name="level" id="Senioridade">
+                    <option selected disabled value="">Selecione</option>
+                    <option value="junior">Junior</option>
+                    <option value="pleno">Pleno</option>
+                    <option value="senior">Senior</option>
+                </select>
+            </div>
+
+            <fieldset class="information">
+                <div id="check">
+                    <span><strong>Selecione as tecnologias que você tem conhecimento:</strong></span><br><br>
+                    <input type="checkbox" id="tecnolofia1" name="tecnologia1" value="HTML">
+                    <label for="tecnologia1">HTML</label>
+
+                    <input type="checkbox" id="tecnolofia2" name="tecnologia2" value="CSS">
+                    <label for="tecnologia2">CSS</label>
+
+                    <input type="checkbox" id="tecnolofia3" name="tecnologia3" value="Javascript">
+                    <label for="tecnologia3">JavaScript</label>
+
+                    <input type="checkbox" id="tecnolofia4" name="tecnologia4" value="PHP">
+                    <label for="tecnologia4">PHP</label>
+
+                    <input type="checkbox" id="tecnolofia5" name="tecnologia5" value="C#">
+                    <label for="tecnologia5">C#</label>
+
+                    <input type="checkbox" id="tecnolofia6" name="tecnologia6" value="Python">
+                    <label for="tecnologia6">Python</label>
+
+                    <input type="checkbox" id="tecnolofia7" name="tecnologia7" value="Java">
+                    <label for="tecnologia7">Java</label>
+
+                    <input type="checkbox" id="tecnolofia8" name="tecnologia8" value="C++">
+                    <label for="tecnologia8">C++</label>
+
+                    <input type="checkbox" id="tecnolofia9" name="tecnologia9" value="C">
+                    <label for="tecnologia9">C</label>
+
+                    <input type="checkbox" id="tecnolofia10" name="tecnologia10" value="Ruby">
+                    <label for="tecnologia10">RUBY</label>
+                </div>
+            </fieldset>
+            <div class="field">
+                <br>
+                <label><strong>Nos conte sobre suas experiencias?</strong></label>
+                <textarea name="experiencia" id="experiencia" cols="30" rows="6"></textarea>
+            </div>
+
+             <button class="button" type="submit">Confirma inscrição!</button>   
+        </form>
+        
+    
+</body>
+</html>
