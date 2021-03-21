@@ -1,5 +1,3 @@
-# formulario-login
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,38 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--esse script se refere icones aos link de cadastro (Twitter e Facebook)-->
-    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DotGothic16&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="style-login.css">
+    
     <title>Login</title>
 </head>
 <body>
-        <main class="container">
+    <main class="container">
         <h2>Login</h2>
-        <form action="">
-        <div class="input-field">
-            <input type="text" name="username" id="username" placeholder="Enter Your Username">
-            <di class="underline"></di>
-        </div>
 
-        <div class="input-field">
-            <input type="password" name="password" id="password" placeholder="Enter Your PassWord">
-            <di class="underline"></di>
-        </div>
+        <form onsubmit="event.preventDefault();handleSubmit(event)">
+            <div class="input-field">
+                <input type="text" name="username" id="username" placeholder="Enter Your Username" required>
+                <di class="underline"></di>
+            </div>
 
-        <input type="submit" value="Continue">
+            <div class="input-field">
+                <input type="password" name="password" id="password" placeholder="Enter Your PassWord" required>
+                <di class="underline"></di>
+            </div>
+
+            <input type="submit" value="Continue">
+        </form>
 
         <div class="footer">
             <span>Or Connect with Social Media</span>
             <div class="social-fields">
-                <div class="social-field twitter">
-                    <a href="#">
-                        <i class="fab fa-twitter"></i>
-                        Sign in Twitter
-                    </a>
-                </div>
-
                 <div class="social-field facebook">
                     <a href="#">
                         <i class="fab fa-facebook-f"></i>
@@ -53,9 +46,38 @@
                     </a>
                 </div>
 
+                <div class="social-field new-user">
+                    <a href="./cadastro/cadastro.html">
+                        <i class="fas fa-user-plus"></i>
+                        New user
+                    </a>
+                </div>
+
             </div>
         </div>
-        </form>
+        
     </main>
+    <script src="./login-pg.js"></script>
+   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>-->
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <script>
+        const handleSubmit = e => {
+            e.preventDefault();
+            const name = e.target.username.value;
+            const password = e.target.password.value;
+
+            axios.post('/user', {
+                name,
+                password,
+            })
+            .then(function (response) {
+                console.log(response.status);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+
 </body>
 </html>
